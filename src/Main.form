@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.7" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JPopupMenu" name="jpm_arbol">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+      <SubComponents>
+        <MenuItem class="javax.swing.JMenuItem" name="Editar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+          </Properties>
+        </MenuItem>
+        <MenuItem class="javax.swing.JMenuItem" name="Eliminar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+          </Properties>
+        </MenuItem>
+        <MenuItem class="javax.swing.JMenuItem" name="Imprimir">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+          </Properties>
+        </MenuItem>
+      </SubComponents>
+    </Container>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -48,13 +73,13 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="6" y="52" width="-1" height="-1"/>
+          <AbsoluteConstraints x="6" y="52" width="570" height="-1"/>
         </Constraint>
       </Constraints>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel1">
+        <Container class="javax.swing.JPanel" name="p_planetaraza">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -95,7 +120,7 @@
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jCheckBox1" min="-2" pref="88" max="-2" attributes="0"/>
+                              <Component id="jc_agua" min="-2" pref="88" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -114,7 +139,7 @@
                                   <Component id="jt_nr" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jb_rr" pref="181" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="75" max="32767" attributes="0"/>
+                              <EmptySpace pref="70" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -156,7 +181,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="js_pt" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jc_agua" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jb_rp" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="32" max="32767" attributes="0"/>
@@ -199,6 +224,11 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="jt_pt">
+              <Properties>
+                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                  <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
@@ -206,8 +236,13 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="js_pt">
+              <Properties>
+                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                  <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                </Property>
+              </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+            <Component class="javax.swing.JCheckBox" name="jc_agua">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Agua"/>
               </Properties>
@@ -216,16 +251,14 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Registrar Planeta"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_rpMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="jc_rp">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -243,10 +276,13 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Registrar Raza"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_rrMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel2">
+        <Container class="javax.swing.JPanel" name="p_explorer">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Explorador">
@@ -265,7 +301,7 @@
                               <Component id="jScrollPane1" min="-2" pref="104" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" pref="22" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="32767" attributes="0"/>
                               <Component id="jScrollPane2" min="-2" pref="108" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -341,7 +377,7 @@
                               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <EmptySpace pref="36" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -369,12 +405,7 @@
             <Component class="javax.swing.JComboBox" name="jc_razae">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -393,16 +424,10 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList1">
+                <Component class="javax.swing.JList" name="jl_lpex">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -418,16 +443,10 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList2">
+                <Component class="javax.swing.JList" name="jl_pfex">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -449,12 +468,7 @@
             <Component class="javax.swing.JComboBox" name="jc_pf">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -468,7 +482,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel3">
+        <Container class="javax.swing.JPanel" name="p_cazador">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Cazador">
@@ -487,7 +501,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jSpinner1" max="32767" attributes="0"/>
+                              <Component id="js_humanos" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -496,7 +510,7 @@
                                   <Component id="jt_ncz" alignment="0" pref="179" max="32767" attributes="0"/>
                                   <Component id="js_edadcz" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="64" max="32767" attributes="0"/>
+                              <EmptySpace pref="59" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel15" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
@@ -536,7 +550,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="js_humanos" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
@@ -568,12 +582,7 @@
             <Component class="javax.swing.JComboBox" name="jc_razacz">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -590,7 +599,12 @@
                 <Property name="text" type="java.lang.String" value="Humanos Atrapados"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JSpinner" name="jSpinner1">
+            <Component class="javax.swing.JSpinner" name="js_humanos">
+              <Properties>
+                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                  <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
@@ -599,7 +613,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel4">
+        <Container class="javax.swing.JPanel" name="p_conquistador">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Conquistador">
@@ -624,7 +638,7 @@
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace pref="64" max="32767" attributes="0"/>
+                              <EmptySpace pref="59" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel19" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
@@ -677,7 +691,7 @@
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace pref="32" max="32767" attributes="0"/>
+                              <EmptySpace pref="48" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jScrollPane4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jScrollPane3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -708,6 +722,11 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="js_edadcq">
+              <Properties>
+                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                  <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel19">
               <Properties>
@@ -717,12 +736,7 @@
             <Component class="javax.swing.JComboBox" name="jc_razacq">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -746,16 +760,10 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jl_jp">
+                <Component class="javax.swing.JList" name="jl_lpcq">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -774,13 +782,7 @@
                 <Component class="javax.swing.JList" name="jl_lpc">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -796,7 +798,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel5">
+        <Container class="javax.swing.JPanel" name="p_abduzcan">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Abduzcan">
@@ -824,7 +826,7 @@
                                   <Component id="jt_nab" alignment="0" pref="179" max="32767" attributes="0"/>
                                   <Component id="js_edadab" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="64" max="32767" attributes="0"/>
+                              <EmptySpace pref="59" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel21" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
@@ -889,12 +891,7 @@
             <Component class="javax.swing.JComboBox" name="jc_rab">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -912,6 +909,11 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="js_aa">
+              <Properties>
+                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                  <SpinnerModel initial="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButton4">
               <Properties>
@@ -927,7 +929,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel6">
+        <Container class="javax.swing.JPanel" name="p_arbol">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Arbol">
@@ -942,23 +944,26 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jComboBox1" pref="94" max="32767" attributes="0"/>
-                          <Component id="jScrollPane5" max="32767" attributes="0"/>
+                          <Component id="jComboBox1" pref="87" max="32767" attributes="0"/>
+                          <Component id="jScrollPane5" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane6" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextField1" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel24" min="-2" pref="48" max="-2" attributes="0"/>
                                   <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox2" pref="101" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane7" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextField1" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jc_pfar" alignment="0" pref="95" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane7" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
+                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
@@ -966,14 +971,14 @@
                                           <Component id="jLabel25" min="-2" pref="48" max="-2" attributes="0"/>
                                           <Component id="jTextField2" max="32767" attributes="0"/>
                                           <Component id="jLabel27" min="-2" pref="48" max="-2" attributes="0"/>
-                                          <Component id="jComboBox3" alignment="0" pref="119" max="32767" attributes="0"/>
+                                          <Component id="jc_rcar" alignment="0" pref="119" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                       <Component id="jbar" min="-2" pref="69" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane8" pref="87" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane8" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -989,7 +994,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="36" max="32767" attributes="0"/>
+                      <EmptySpace pref="28" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1002,11 +1007,11 @@
                               <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       <Component id="jScrollPane5" min="-2" pref="250" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                                       <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1031,8 +1036,8 @@
                                       </Group>
                                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jc_pfar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jc_rcar" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
@@ -1090,16 +1095,10 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList3">
+                <Component class="javax.swing.JList" name="jl_palien">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -1120,7 +1119,15 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTree" name="jTree1">
+                <Component class="javax.swing.JTree" name="jt_arbol">
+                  <Properties>
+                    <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
+                      <TreeModel code="Planetas"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jt_arbolMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1149,15 +1156,10 @@
                 <Property name="text" type="java.lang.String" value="Planeta favorito "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox2">
+            <Component class="javax.swing.JComboBox" name="jc_pfar">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -1169,15 +1171,10 @@
                 <Property name="text" type="java.lang.String" value="Raza"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox3">
+            <Component class="javax.swing.JComboBox" name="jc_rcar">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <AuxValues>
@@ -1191,16 +1188,10 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList4">
+                <Component class="javax.swing.JList" name="jl_lp">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -1224,16 +1215,10 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="jList5">
+                <Component class="javax.swing.JList" name="jl_lpa">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -1243,8 +1228,18 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JSpinner" name="jSpinner2">
+              <Properties>
+                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                  <SpinnerModel initial="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="jSpinner3">
+              <Properties>
+                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                  <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel28">
               <Properties>

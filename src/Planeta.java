@@ -19,6 +19,13 @@ public class Planeta {
     public Planeta() {
     }
 
+    public Planeta(String nombre, String agua, int tamano) {
+        this.nombre = nombre;
+        this.agua = agua;
+        this.tamano = tamano;
+    }
+    
+
     public Planeta(String nombre, String agua, int tamano, ArrayList<Alienigenas> Visitas) {
         this.nombre = nombre;
         this.agua = agua;
@@ -57,12 +64,18 @@ public class Planeta {
     public void setVisitas(ArrayList<Alienigenas> Visitas) {
         this.Visitas = Visitas;
     }
-
+    
+    /*
     @Override
     public String toString() {
         return "Planeta{" + "nombre=" + nombre + ", agua=" + agua + ", tamano=" + tamano + ", Visitas=" + Visitas + '}';
     }
-    
-    
+    */
+
+   /* @Override
+    public String toString() {
+        return  nombre;
+    }
+    */
     
 }
