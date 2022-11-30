@@ -976,23 +976,49 @@ public class Main extends javax.swing.JFrame {
 
     private void jb_arbolMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_arbolMouseClicked
         // TODO add your handling code here:
-        String planet = (String)jl_palien.getSelectedValue();
-        Raza r = new Raza();
-        for (int i = 0; i < Al.size(); i++) {
-            if (planet.equals(Al.get(i).getNombre())) {
-                r = Al.get(i).getRaza();
+        String planet = (String)jc_plant.getSelectedItem();
+        Raza r = new Raza(); Planeta p = new Planeta();
+       for (int i = 0; i < Planetas.size(); i++) {
+            if (planet.equals(Planetas.get(i).getNombre())) {
+                p = Planetas.get(i);
             }
         }
+        String tipo = "";
+        DefaultMutableTreeNode tipoA  = new DefaultMutableTreeNode();
         DefaultListModel Listam = (DefaultListModel) jl_palien.getModel();
-        String alien, nombre;
-        alien = ((Alienigenas) Listam.get(
-                    jl_palien.getSelectedIndex())).
-                    getNombre(); 
+        String alienr="", nombre="", raiz = "";
+        
         DefaultTreeModel Arbol = (DefaultTreeModel)jt_arbol.getModel();
         DefaultMutableTreeNode Planetas = (DefaultMutableTreeNode) Arbol.getRoot();        
-        DefaultMutableTreeNode np = new DefaultMutableTreeNode(r.getNombre());
+        DefaultMutableTreeNode np = new DefaultMutableTreeNode(p.getNombre());
         
+        r = ((Alienigenas) Listam.get(jl_palien.getSelectedIndex())).getRaza(); 
+        alienr = ((Alienigenas) Listam.get(jl_palien.getSelectedIndex())).getNombre();
+        DefaultMutableTreeNode alieni = new DefaultMutableTreeNode(alienr);
+        if (Listam.get(jl_palien.getSelectedIndex()) instanceof exploradores) {
+            tipo = "Exploradores";
+            
+        }
+        else if (Listam.get(jl_palien.getSelectedIndex()) instanceof cazadores) {
+            tipo = "Cazadores";
+            
+        }
+        else if (Listam.get(jl_palien.getSelectedIndex()) instanceof Conquistadores) {
+            tipo = "Exploradores";
+            
+        }
+        else if (Listam.get(jl_palien.getSelectedIndex()) instanceof Abduzcan) {
+            tipo = "Abduzcan";
+            
+        }
+        tipoA= new DefaultMutableTreeNode(tipo);            
+            tipoA.add(alieni);
+         np.add(tipoA);
+        Planetas.add(np);
         jt_arbol.setModel(Arbol);
+        
+        
+       
     }//GEN-LAST:event_jb_arbolMouseClicked
 
     private void jc_plantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jc_plantActionPerformed
