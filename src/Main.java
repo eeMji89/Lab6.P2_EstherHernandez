@@ -1016,7 +1016,7 @@ public class Main extends javax.swing.JFrame {
          np.add(tipoA);
         Planetas.add(np);
         jt_arbol.setModel(Arbol);
-        
+        Arbol.reload();
         
        
     }//GEN-LAST:event_jb_arbolMouseClicked
