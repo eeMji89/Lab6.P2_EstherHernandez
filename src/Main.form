@@ -813,6 +813,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="A&#xf1;adir a su Lista"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_addMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

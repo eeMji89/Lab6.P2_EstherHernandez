@@ -476,6 +476,11 @@ public class Main extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jl_lpc);
 
         jb_add.setText("Añadir a su Lista");
+        jb_add.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_addMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout p_conquistadorLayout = new javax.swing.GroupLayout(p_conquistador);
         p_conquistador.setLayout(p_conquistadorLayout);
@@ -926,9 +931,9 @@ public class Main extends javax.swing.JFrame {
             }
         }
             cazadores c = new cazadores(humanos, nombre, R, edad, amenaza);
-       Al.add(a);
-        
-        
+       Al.add(c);
+        System.out.println(Al.toString());
+        System.out.println(Al.size());
     }//GEN-LAST:event_jb_gczMouseClicked
 
     private void jb_gaeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_gaeMouseClicked
@@ -978,17 +983,25 @@ public class Main extends javax.swing.JFrame {
                 r = Al.get(i).getRaza();
             }
         }
+        DefaultListModel Listam = (DefaultListModel) jl_palien.getModel();
+        String alien, nombre;
+        alien = ((Alienigenas) Listam.get(
+                    jl_palien.getSelectedIndex())).
+                    getNombre(); 
         DefaultTreeModel Arbol = (DefaultTreeModel)jt_arbol.getModel();
-        DefaultMutableTreeNode Planetas = (DefaultMutableTreeNode) Arbol.getRoot();
-        
+        DefaultMutableTreeNode Planetas = (DefaultMutableTreeNode) Arbol.getRoot();        
         DefaultMutableTreeNode np = new DefaultMutableTreeNode(r.getNombre());
+        
+        jt_arbol.setModel(Arbol);
     }//GEN-LAST:event_jb_arbolMouseClicked
 
     private void jc_plantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jc_plantActionPerformed
         // TODO add your handling code here:
+        System.out.println(Al.size());
         DefaultListModel Listam = (DefaultListModel) jl_palien.getModel();
         for (int i = 0; i < Al.size(); i++) {
-            Listam.addElement(Al.get(i).getNombre());
+            Listam.addElement(Al.get(i));
+            
         }
         jl_palien.setModel(Listam);
     }//GEN-LAST:event_jc_plantActionPerformed
@@ -1015,7 +1028,7 @@ public class Main extends javax.swing.JFrame {
             }
         }
             Abduzcan c = new Abduzcan(animales, nombre, R, edad, amenaza);
-       Al.add(a);
+       Al.add( c);
         
     }//GEN-LAST:event_jb_gabMouseClicked
 
@@ -1040,8 +1053,26 @@ public class Main extends javax.swing.JFrame {
             }
         }
             Conquistadores c = new Conquistadores( nombre, R, edad, amenaza);
-       Al.add(a); 
+       Al.add(c); 
     }//GEN-LAST:event_jb_guardarcqMouseClicked
+
+    private void jb_addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_addMouseClicked
+        // TODO add your handling code here:
+        Planeta p = new Planeta();
+        String planetita =(String) jl_lpcq.getSelectedValue();
+        DefaultListModel PlanetCQ = (DefaultListModel)jl_lpc.getModel();
+        PlanetCQ.addElement(planetita);
+        jl_lpc.setModel(PlanetCQ);  
+        for (int i = 0; i < Planetas.size(); i++) {
+             if (planetita.equals(Planetas.get(i).getNombre())) {
+                p = Planetas.get(i);
+            }
+        }
+        
+        conquistados.add(p);
+        jl_lpc.setModel(PlanetCQ);
+        
+    }//GEN-LAST:event_jb_addMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1079,6 +1110,7 @@ public class Main extends javax.swing.JFrame {
     }
     Alienigenas a;
     ArrayList <Planeta> explorados = new ArrayList();
+    ArrayList<Planeta>conquistados = new ArrayList();
 ArrayList <Alienigenas> Al= new ArrayList();
 ArrayList <Planeta> Planetas = new ArrayList();
 ArrayList <Raza> Razas = new ArrayList();
