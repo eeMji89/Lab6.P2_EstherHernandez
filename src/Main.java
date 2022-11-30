@@ -2,13 +2,7 @@
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
-import javax.swing.ListModel;
 import javax.swing.tree.DefaultMutableTreeNode;
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
 /**
  *
@@ -279,6 +273,7 @@ public class Main extends javax.swing.JFrame {
 
         jCheckBox2.setText("Es Amenaza");
 
+        jl_lpex.setModel(new DefaultListModel());
         jl_lpex.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jl_lpexMouseClicked(evt);
@@ -286,6 +281,7 @@ public class Main extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jl_lpex);
 
+        jl_pfex.setModel(new DefaultListModel());
         jScrollPane2.setViewportView(jl_pfex);
 
         jButton1.setText("Añadir a su Lista");
@@ -298,6 +294,11 @@ public class Main extends javax.swing.JFrame {
         jLabel12.setText("Planeta Favorito");
 
         jb_gae.setText("Guardar");
+        jb_gae.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_gaeMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout p_explorerLayout = new javax.swing.GroupLayout(p_explorer);
         p_explorer.setLayout(p_explorerLayout);
@@ -460,8 +461,10 @@ public class Main extends javax.swing.JFrame {
 
         jButton3.setText("Guardar");
 
+        jl_lpcq.setModel(new DefaultListModel());
         jScrollPane3.setViewportView(jl_lpcq);
 
+        jl_lpc.setModel(new DefaultListModel());
         jScrollPane4.setViewportView(jl_lpc);
 
         jb_add.setText("Añadir a su Lista");
@@ -608,6 +611,7 @@ public class Main extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jl_palien.setModel(new DefaultListModel());
         jScrollPane5.setViewportView(jl_palien);
 
         jButton5.setText(">");
@@ -641,6 +645,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel27.setText("Raza");
 
+        jl_lp.setModel(new DefaultListModel());
         jScrollPane7.setViewportView(jl_lp);
 
         jbar.setText("Añadir");
@@ -650,6 +655,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jl_lpa.setModel(new DefaultListModel());
         jScrollPane8.setViewportView(jl_lpa);
 
         jSpinner2.setModel(new javax.swing.SpinnerNumberModel());
@@ -850,9 +856,9 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         Planeta p = new Planeta();
         String pfavorito =(String) jl_lpex.getSelectedValue();
-        DefaultListModel PlanetEX = (DefaultListModel)jl_lpex.getModel();
+        DefaultListModel PlanetEX = (DefaultListModel)jl_pfex.getModel();
         PlanetEX.addElement(pfavorito);
-        jl_lpex.setModel(PlanetEX);  
+        jl_pfex.setModel(PlanetEX);  
         for (int i = 0; i < Planetas.size(); i++) {
              if (pfavorito.equals(Planetas.get(i).getNombre())) {
                 p = Planetas.get(i);
@@ -896,6 +902,25 @@ public class Main extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jb_gczMouseClicked
+
+    private void jb_gaeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_gaeMouseClicked
+        // TODO add your handling code here:
+        Planeta p = new Planeta();
+        Raza raza = new Raza();
+        String raz = (String)jc_razae.getSelectedItem();
+        String planeta = (String) jc_pf.getSelectedItem();
+        for (int i = 0; i < Planetas.size(); i++) {
+            if (planeta.equals(Planetas.get(i).getNombre())) {
+                p = Planetas.get(i);
+            }
+        }
+        for (int i = 0; i < Razas.size(); i++) {
+            if (raz.equals(Razas.get(i).getNombre())) {
+                p = Planetas.get(i);
+            }
+        }
+        
+    }//GEN-LAST:event_jb_gaeMouseClicked
 
     /**
      * @param args the command line arguments

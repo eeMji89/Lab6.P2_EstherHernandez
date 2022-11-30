@@ -1,7 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
+import java.util.ArrayList;
+
 
 /**
  *
@@ -10,6 +9,7 @@
 public class Raza {
     private Planeta p;
     private String nombre;
+    private ArrayList<Alienigenas> Aliens;
 
     public Raza(Planeta p, String nombre) {
         this.p = p;
@@ -19,6 +19,14 @@ public class Raza {
     public Raza() {
     }
 
+    public ArrayList<Alienigenas> getAliens() {
+        return Aliens;
+    }
+
+    public void setAliens(ArrayList<Alienigenas> Aliens) {
+        this.Aliens = Aliens;
+    }
+    
     public Planeta getP() {
         return p;
     }
