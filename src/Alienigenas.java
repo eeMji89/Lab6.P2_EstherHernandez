@@ -14,6 +14,7 @@ public class Alienigenas {
     private String amenaza;
 
     public Alienigenas() {
+        
     }
 
     public Alienigenas(String nombre, Raza raza, int edad, String amenaza) {
@@ -22,6 +23,8 @@ public class Alienigenas {
         this.edad = edad;
         this.amenaza = amenaza;
     }
+
+    
 
     public String getNombre() {
         return nombre;

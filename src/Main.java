@@ -22,12 +22,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
-        DefaultListModel Planet = (DefaultListModel )jl_lp.getModel();
-        for (int i = 0; i < Planetas.size(); i++) {
-            Planet.addElement(Planetas.get(i).getNombre());
-        }
         
-        jl_lp.setModel(Planet);
     }
 
     /**
@@ -823,12 +818,12 @@ public class Main extends javax.swing.JFrame {
         Planeta.addElement(p.getNombre());
         jc_rp.setModel(Planeta);
         
-        /*DefaultListModel Planet = (DefaultListModel )jl_lp.getModel();
+       DefaultListModel Planet = (DefaultListModel )jl_lp.getModel();
         Planet.addElement(p.getNombre());
         jl_lp.setModel(Planet);       
         jl_lpcq.setModel(Planet);
         jl_lpex.setModel(Planet);
-        */
+        
     }//GEN-LAST:event_jb_rpMouseClicked
 
     private void jb_rrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_rrMouseClicked
@@ -854,9 +849,9 @@ public class Main extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
         Planeta p = new Planeta();
-        String pfavorito = jl_lpex.getSelectedValue();
+        String pfavorito =(String) jl_lpex.getSelectedValue();
         DefaultListModel PlanetEX = (DefaultListModel)jl_lpex.getModel();
-        PlanetEX.addElement(jl_lpex.getSelectedValue());
+        PlanetEX.addElement(pfavorito);
         jl_lpex.setModel(PlanetEX);  
         for (int i = 0; i < Planetas.size(); i++) {
              if (pfavorito.equals(Planetas.get(i).getNombre())) {
@@ -872,36 +867,19 @@ public class Main extends javax.swing.JFrame {
 
     private void jl_lpexMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_lpexMouseClicked
         // TODO add your handling code here:
-       /* DefaultListModel Planet = (DefaultListModel )jl_lp.getModel();
-        for (int i = 0; i < Planetas.size(); i++) {
-            Planet.addElement(Planetas.get(i).getNombre());
-        }
-        
-        jl_lp.setModel(Planet);       
-        jl_lpcq.setModel(Planet);
-        jl_lpex.setModel(Planet);*/
+       
         
     }//GEN-LAST:event_jl_lpexMouseClicked
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         // TODO add your handling code here:
-       // ListModel Planet = jl_lp.getModel();
-       /* Lista = (DefaultListModel) jl_lp.getModel();
-        for (int i = 0; i < Planetas.size(); i++) {
-            Lista.addElement(Planetas.get(i).getNombre());
-            
-        }
-        
-        jl_lp.setModel(Lista);       
-       // jl_lpcq.setModel(Lista);
-        //jl_lpex.setModel(Lista);*/
-        
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void jb_gczMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_gczMouseClicked
         // TODO add your handling code here:
         String nombre = jt_ncz.getText();
-        int edad = (int) js_edadcq.getValue();
+        Raza R = new Raza();
+        int edad = (int) js_edadcz.getValue();
         int humanos = (int)js_humanos.getValue();
         String amenaza = "";
         if (jc_acz.isSelected()) {
@@ -910,7 +888,13 @@ public class Main extends javax.swing.JFrame {
         else{
             amenaza = "No";
         }
-        jc_razacq.getSelectedItem();
+        String raza = (String)jc_razacq.getSelectedItem();
+        for (int i = 0; i < Razas.size(); i++) {
+            if (raza.equals(((Raza)Razas.get(i)).getNombre())) {
+                R = Razas.get(i);
+            }
+        }
+        
     }//GEN-LAST:event_jb_gczMouseClicked
 
     /**
@@ -947,10 +931,11 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
+    Alienigenas a;
+ArrayList <Alienigenas> Al= new ArrayList();
 ArrayList <Planeta> Planetas = new ArrayList();
 ArrayList <Raza> Razas = new ArrayList();
 DefaultMutableTreeNode nodo_seleccionado;
-Alienigenas a;
 
  
         
