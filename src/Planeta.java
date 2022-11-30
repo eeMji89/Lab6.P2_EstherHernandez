@@ -14,7 +14,7 @@ public class Planeta {
     private String nombre;
     private String agua;
     private int tamano;
-    private ArrayList<Alienigenas> Visitas ;
+    private ArrayList<Alienigenas> habitantes ;
 
     public Planeta() {
     }
@@ -30,7 +30,7 @@ public class Planeta {
         this.nombre = nombre;
         this.agua = agua;
         this.tamano = tamano;
-        this.Visitas = Visitas;
+        this.habitantes = Visitas;
     }
 
     public String getNombre() {
@@ -58,17 +58,17 @@ public class Planeta {
     }
 
     public ArrayList<Alienigenas> getVisitas() {
-        return Visitas;
+        return habitantes;
     }
 
     public void setVisitas(ArrayList<Alienigenas> Visitas) {
-        this.Visitas = Visitas;
+        this.habitantes = Visitas;
     }
     
     /*
     @Override
     public String toString() {
-        return "Planeta{" + "nombre=" + nombre + ", agua=" + agua + ", tamano=" + tamano + ", Visitas=" + Visitas + '}';
+        return "Planeta{" + "nombre=" + nombre + ", agua=" + agua + ", tamano=" + tamano + ", habitantes=" + habitantes + '}';
     }
     */
 
