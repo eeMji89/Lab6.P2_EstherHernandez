@@ -1,6 +1,8 @@
 
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 /*
@@ -20,6 +22,12 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
+        DefaultListModel Planet = (DefaultListModel )jl_lp.getModel();
+        for (int i = 0; i < Planetas.size(); i++) {
+            Planet.addElement(Planetas.get(i).getNombre());
+        }
+        
+        jl_lp.setModel(Planet);
     }
 
     /**
@@ -79,7 +87,7 @@ public class Main extends javax.swing.JFrame {
         jc_acz = new javax.swing.JCheckBox();
         jLabel16 = new javax.swing.JLabel();
         js_humanos = new javax.swing.JSpinner();
-        jButton2 = new javax.swing.JButton();
+        jb_gcz = new javax.swing.JButton();
         p_conquistador = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jt_ncq = new javax.swing.JTextField();
@@ -102,7 +110,7 @@ public class Main extends javax.swing.JFrame {
         jc_aab = new javax.swing.JCheckBox();
         jLabel22 = new javax.swing.JLabel();
         js_aa = new javax.swing.JSpinner();
-        jButton4 = new javax.swing.JButton();
+        jb_gab = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         jt_nab = new javax.swing.JTextField();
         p_arbol = new javax.swing.JPanel();
@@ -147,6 +155,11 @@ public class Main extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 6, 279, 28));
 
         jTabbedPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         p_planetaraza.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -271,11 +284,21 @@ public class Main extends javax.swing.JFrame {
 
         jCheckBox2.setText("Es Amenaza");
 
+        jl_lpex.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_lpexMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jl_lpex);
 
         jScrollPane2.setViewportView(jl_pfex);
 
         jButton1.setText("Añadir a su Lista");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jLabel12.setText("Planeta Favorito");
 
@@ -366,7 +389,12 @@ public class Main extends javax.swing.JFrame {
 
         js_humanos.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
-        jButton2.setText("Guardar");
+        jb_gcz.setText("Guardar");
+        jb_gcz.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_gczMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout p_cazadorLayout = new javax.swing.GroupLayout(p_cazador);
         p_cazador.setLayout(p_cazadorLayout);
@@ -375,7 +403,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_cazadorLayout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addGroup(p_cazadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jb_gcz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, p_cazadorLayout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addGap(18, 18, 18)
@@ -419,7 +447,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel16)
                     .addComponent(js_humanos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(jb_gcz)
                 .addContainerGap(82, Short.MAX_VALUE))
         );
 
@@ -522,7 +550,7 @@ public class Main extends javax.swing.JFrame {
 
         js_aa.setModel(new javax.swing.SpinnerNumberModel());
 
-        jButton4.setText("Guardar");
+        jb_gab.setText("Guardar");
 
         jLabel23.setText("Nombre");
 
@@ -533,7 +561,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_abduzcanLayout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addGroup(p_abduzcanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jb_gab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, p_abduzcanLayout.createSequentialGroup()
                         .addComponent(jLabel22)
                         .addGap(18, 18, 18)
@@ -577,7 +605,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel22)
                     .addComponent(js_aa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(jb_gab)
                 .addContainerGap(82, Short.MAX_VALUE))
         );
 
@@ -795,6 +823,12 @@ public class Main extends javax.swing.JFrame {
         Planeta.addElement(p.getNombre());
         jc_rp.setModel(Planeta);
         
+        /*DefaultListModel Planet = (DefaultListModel )jl_lp.getModel();
+        Planet.addElement(p.getNombre());
+        jl_lp.setModel(Planet);       
+        jl_lpcq.setModel(Planet);
+        jl_lpex.setModel(Planet);
+        */
     }//GEN-LAST:event_jb_rpMouseClicked
 
     private void jb_rrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_rrMouseClicked
@@ -816,6 +850,68 @@ public class Main extends javax.swing.JFrame {
         jc_razacq.setModel(Raza);
         jc_rab.setModel(Raza);
     }//GEN-LAST:event_jb_rrMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        Planeta p = new Planeta();
+        String pfavorito = jl_lpex.getSelectedValue();
+        DefaultListModel PlanetEX = (DefaultListModel)jl_lpex.getModel();
+        PlanetEX.addElement(jl_lpex.getSelectedValue());
+        jl_lpex.setModel(PlanetEX);  
+        for (int i = 0; i < Planetas.size(); i++) {
+             if (pfavorito.equals(Planetas.get(i).getNombre())) {
+                p = Planetas.get(i);
+            }
+        }
+        ArrayList <Planeta> favoritos = new ArrayList();
+        favoritos.add(p);
+        DefaultComboBoxModel PlanetaF = (DefaultComboBoxModel)jc_pf.getModel();
+        PlanetaF.addElement(p.getNombre());
+        jc_razae.setModel(PlanetaF);
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jl_lpexMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_lpexMouseClicked
+        // TODO add your handling code here:
+       /* DefaultListModel Planet = (DefaultListModel )jl_lp.getModel();
+        for (int i = 0; i < Planetas.size(); i++) {
+            Planet.addElement(Planetas.get(i).getNombre());
+        }
+        
+        jl_lp.setModel(Planet);       
+        jl_lpcq.setModel(Planet);
+        jl_lpex.setModel(Planet);*/
+        
+    }//GEN-LAST:event_jl_lpexMouseClicked
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        // TODO add your handling code here:
+       // ListModel Planet = jl_lp.getModel();
+       /* Lista = (DefaultListModel) jl_lp.getModel();
+        for (int i = 0; i < Planetas.size(); i++) {
+            Lista.addElement(Planetas.get(i).getNombre());
+            
+        }
+        
+        jl_lp.setModel(Lista);       
+       // jl_lpcq.setModel(Lista);
+        //jl_lpex.setModel(Lista);*/
+        
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void jb_gczMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_gczMouseClicked
+        // TODO add your handling code here:
+        String nombre = jt_ncz.getText();
+        int edad = (int) js_edadcq.getValue();
+        int humanos = (int)js_humanos.getValue();
+        String amenaza = "";
+        if (jc_acz.isSelected()) {
+            amenaza= "Si";
+        }
+        else{
+            amenaza = "No";
+        }
+        jc_razacq.getSelectedItem();
+    }//GEN-LAST:event_jb_gczMouseClicked
 
     /**
      * @param args the command line arguments
@@ -855,14 +951,15 @@ ArrayList <Planeta> Planetas = new ArrayList();
 ArrayList <Raza> Razas = new ArrayList();
 DefaultMutableTreeNode nodo_seleccionado;
 Alienigenas a;
+
+ 
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Editar;
     private javax.swing.JMenuItem Eliminar;
     private javax.swing.JMenuItem Imprimir;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -909,7 +1006,9 @@ Alienigenas a;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JButton jb_add;
+    private javax.swing.JButton jb_gab;
     private javax.swing.JButton jb_gae;
+    private javax.swing.JButton jb_gcz;
     private javax.swing.JButton jb_rp;
     private javax.swing.JButton jb_rr;
     private javax.swing.JButton jbar;
